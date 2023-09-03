@@ -23,7 +23,7 @@ final class CookieBasedEmailContext implements EmailContextInterface
 
     public function getEmail(): ?string
     {
-        $request = $this->requestStack->getMasterRequest();
+        $request = $this->requestStack->getMainRequest();
         if (null === $request) {
             return $this->decorated->getEmail();
         }
